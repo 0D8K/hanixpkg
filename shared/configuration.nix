@@ -76,6 +76,7 @@
     chromium
     telegram-desktop
     git
+    networkmanagerapplet
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
