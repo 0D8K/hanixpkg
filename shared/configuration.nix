@@ -38,12 +38,6 @@
     LC_TIME = "es_ES.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "es";
-    variant = "nodeadkeys";
-  };
-
   # Configure console keymap
   console.keyMap = "es";
 
@@ -67,8 +61,10 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     tmux
-    pcmanfm
+    xfce.thunar
+    gvfs
     alacritty
+    foot
     firefox
     neovim
     open-vm-tools
@@ -77,6 +73,7 @@
     telegram-desktop
     git
     networkmanagerapplet
+    killall
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
