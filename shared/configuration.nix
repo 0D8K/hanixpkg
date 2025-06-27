@@ -6,9 +6,8 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "laptonix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -19,6 +18,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+#  networking.wireless.enable = true;
+#  networking.wireless.userControlled.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Madrid";
@@ -52,7 +53,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
+  hardware.enableAllFirmware = true;
 
   virtualisation.vmware.guest.enable = true;
   # List packages installed in system profile. To search, run:

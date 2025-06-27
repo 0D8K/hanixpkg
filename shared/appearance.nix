@@ -6,8 +6,10 @@
   ############################
 
   environment.systemPackages = with pkgs; [
+    greetd.tuigreet
     hyprland
     waybar
+    hyprpaper
     wofi
     wlr-randr
     dunst
@@ -18,7 +20,14 @@
     xdg-desktop-portal-gtk
     nerdfonts
     siji
+  ];
+
+  ############################
+  ## FUENTES                ##
+  ############################
+  fonts.packages = with pkgs; [
     dejavu_fonts
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   ############################
@@ -33,17 +42,14 @@
     xdg-desktop-portal-gtk
   ];
 
-  ############################
-  ## FUENTES                ##
-  ############################
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland --time";
+        user = "odbk";
+      };
+    };
+  };
 
-  fonts.packages = with pkgs; [ dejavu_fonts ];
-
-  ############################
-  ## OPCIONAL: TOUCH VMWARE ##
-  ############################
-
-  # Si usas VMware y necesitas video driver específico:
-  # Puedes probar con virtio o dejarlo fuera con Wayland
-  # (la mayoría de sesiones Wayland funcionan sin config de driver)
 }
