@@ -19,7 +19,6 @@
     pulseaudio
     pavucontrol
     xterm
-    nerd-fonts
     siji
   ];
 
