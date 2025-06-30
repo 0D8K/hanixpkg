@@ -70,7 +70,6 @@
     foot
     firefox
     neovim
-    open-vm-tools
     openvpn
     chromium
     telegram-desktop
