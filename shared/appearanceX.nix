@@ -16,7 +16,6 @@
     feh                    # fondo de pantalla
     lxappearance           # cambiar temas GTK fácilmente
     xclip                  # util para portapapeles
-    network-manager-applet
     pulseaudio
     pavucontrol
     xterm
