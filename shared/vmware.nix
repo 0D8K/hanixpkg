@@ -12,6 +12,7 @@
 
   # Servicio principal
   virtualisation.vmware.guest.enable = true;
+  services.xserver.videoDrivers = [ "vmware" ];
 
   # Archivo para autoiniciar vmware-user en sesiones X11
   # Solo necesario si no usas un DE como GNOME/KDE
