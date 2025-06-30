@@ -11,7 +11,7 @@
   ];
 
   # Servicio principal
-  services.vmtoolsd.enable = true;
+  virtualisation.vmware.guest.enable = true;
 
   # Archivo para autoiniciar vmware-user en sesiones X11
   # Solo necesario si no usas un DE como GNOME/KDE
