@@ -16,7 +16,7 @@
       fsType = "vfat";
     };
 
-  fileSystem."/" =
+  fileSystems."/" =
     { device = "/dev/sda2"; 
       fsType = "ext4";
     };
