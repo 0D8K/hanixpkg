@@ -15,6 +15,16 @@
         ];
       };
 
+      wm = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./shared/configuration.nix
+          ./hosts/laptop.nix
+          ./shared/hacking.nix
+          ./shared/appearanceX.nix
+        ];
+      };
+
       pc = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
