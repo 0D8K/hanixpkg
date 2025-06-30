@@ -20,6 +20,7 @@
     pavucontrol
     xterm
     siji
+    arandr
   ];
 
   ############################
