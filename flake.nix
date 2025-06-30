@@ -22,6 +22,7 @@
           ./hosts/vm.nix
           ./shared/hacking.nix
           ./shared/appearanceX.nix
+          ./shared/vmware.nix
         ];
       };
 
