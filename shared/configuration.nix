@@ -11,6 +11,11 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  services.pipewire = {
+    enable = true;
+    audio.enable = true;
+  };
+  
   networking.hostName = "laptonix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -76,20 +81,10 @@
     git
     networkmanagerapplet
     killall
+    geany
+    wireplumber
+    helvum
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

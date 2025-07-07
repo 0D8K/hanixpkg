@@ -42,14 +42,6 @@
     xdg-desktop-portal-gtk
   ];
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland --time";
-        user = "odbk";
-      };
-    };
-  };
+  services.greetd.enable = true;
 
 }
