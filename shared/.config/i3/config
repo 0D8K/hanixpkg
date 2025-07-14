@@ -1,0 +1,7 @@
+# ~/.config/i3/config
+set $mod Mod1
+font pango:monospace 12
+
+include ~/.config/i3/general.conf
+include ~/.config/i3/workspaces.conf
+include ~/.config/i3/bindings.conf
