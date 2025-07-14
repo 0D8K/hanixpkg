@@ -66,13 +66,13 @@ in
   services.xserver.dpi = 192;
 
   # Entradas (ratón/teclado táctil, etc.)
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   ############################
   ## AUTOLOGIN (opcional)   ##
   ############################
 
-  services.xserver.displayManager.autoLogin = {
+  services.displayManager.autoLogin = {
     enable = false;  # Cámbialo a true si quieres autologin
     user = "odbk";   # Asegúrate que el usuario exista
   };
