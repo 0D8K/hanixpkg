@@ -15,6 +15,11 @@ in
   # Agrega una regla para esqueleto de nuevos usuarios (no afecta usuarios actuales)
   environment.etc."skel/.config/wallpaper.jpg".source = wallpaperSrc;
 
+  # Ajusta el fondo con fill
+  services.xserver.displayManager.sessionCommands = ''
+    feh --bg-fill /etc/wallpapers/default.jpg
+  '';
+
   ############################
   ## PAQUETES DEL SISTEMA   ##
   ############################
@@ -62,13 +67,6 @@ in
 
   # Entradas (ratón/teclado táctil, etc.)
   services.xserver.libinput.enable = true;
-
-  ############################
-  ## AUTOSTART WALLPAPER    ##
-  ############################
-  services.xserver.displayManager.sessionCommands = ''
-    feh --bg-fill /etc/wallpapers/default.jpg
-  '';
 
   ############################
   ## AUTOLOGIN (opcional)   ##
