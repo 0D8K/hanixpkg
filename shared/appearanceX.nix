@@ -9,15 +9,12 @@ in
   ## WALLPAPER GLOBAL     ##
   ###########################
 
-  # Copia el wallpaper a una ubicación accesible para todos
-  environment.etc."wallpapers/default.jpg".source = wallpaperSrc;
-
-  # Agrega una regla para esqueleto de nuevos usuarios (no afecta usuarios actuales)
-  environment.etc."skel/.config/wallpaper.jpg".source = wallpaperSrc;
+  # Agrega una regla para esqueleto de nuevos usuarios (no afecta usuarios actuales)  
+  environment.etc."skel/.config".source = ./.config;  
 
   # Ajusta el fondo con fill
   services.xserver.displayManager.sessionCommands = ''
-    feh --bg-fill /etc/wallpapers/default.jpg
+    feh --bg-fill ~/.config/wallpaper.png
   '';
 
   ############################
@@ -48,12 +45,24 @@ in
   ############################
   ## FUENTES                ##
   ############################
-
-  fonts.packages = with pkgs; [
-    dejavu_fonts
-    material-design-icons
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "Iosevka" ]; })
-  ];
+  fonts = {
+    enableDefaultFonts = true;
+    packages = with pkgs; [
+      dejavu_fonts
+      material-design-icons
+      (nerdfonts.override { fonts = [ "JetBrainsMono" "Iosevka" ]; })
+    ];
+    
+    fontconfig = {
+      enable = true;
+      # Opcional: puedes definir fuentes por defecto más específicas
+      defaultFonts = {
+        monospace = [ "JetBrainsMono Nerd Font" "Iosevka Nerd Font" "DejaVu Sans Mono" ];
+        sansSerif = [ "DejaVu Sans" ];
+        serif = [ "DejaVu Serif" ];
+      };
+    };
+  };
 
   ############################
   ## HABILITAR X11 + I3     ##
